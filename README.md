@@ -17,8 +17,9 @@ A simple Python script that splits PDF files into smaller files based on the num
 ## Installation
 
 1. Clone the repository:
-
-git clone https://github.com/[your-username]/pdf-splitter.git
+```
+git clone https://github.com/ali-kin4/pdf-splitter.git
+```
 
 2. Install the requirements:
 ```terminal
