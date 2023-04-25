@@ -84,6 +84,15 @@ def run_split():
   except Exception as e:
     output_text.insert(tk.END, f"Error: {e}")
 
+def reset_app():
+    """Resets the app by clearing all inputs, outputs, and variables."""
+    pdf_entry.delete(0, tk.END)
+    start_entry.delete(0, tk.END)
+    pages_entry.delete(0, tk.END)
+    dest_entry.delete(0, tk.END)
+    output_text.delete(1.0, tk.END)
+    split_files.clear()
+
 # Create a root window.
 root = tk.Tk()
 root.title("PDF Splitter")
@@ -160,6 +169,13 @@ output_label = tk.Label(output_frame, text="Output:", font=("Arial", 10))
 output_label.pack()
 output_text = tk.Text(output_frame, width=40, height=10)
 output_text.pack()
+
+# Create a button to reset the app.
+reset_button = ttk.Button(input_frame, text="Reset", command=reset_app, style="MyButton.TButton")
+reset_button.grid(row=4, column=2)
+
+# Initialize a list to store split file paths.
+split_files = []
 
 root.resizable(False, False)
 
